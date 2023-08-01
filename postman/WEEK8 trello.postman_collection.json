@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "47603053-2b62-4e6d-81ab-e458d17740d7",
+		"name": "WEEK8 trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27782301"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ah\",\r\n    \"email\": \"ma2526057@gmail.com\",\r\n    \"password\":\"trent\",\r\n    \"cpassword\":\"trent\",\r\n    \"phone\" : \"25260571\",\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/SignUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"SignUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ma2526057@gmail.com\",\r\n    \"password\": \"64c258359bb09c18234fae50123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzEyMjgwNWVlYmZjMTY0YjU1NWUyMCIsImVtYWlsIjoiYWhtZWRAZ21haWwuY29tIiwiaWF0IjoxNjkwMzc5MTExLCJleHAiOjE2OTA3MjQ3MTF9.CT3uwxZaMKhCgQMfcVtuNiXc17lG_i-HbthGXWXUGQE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzEyMjgwNWVlYmZjMTY0YjU1NWUyMCIsImVtYWlsIjoiYWhtZWRAZ21haWwuY29tIiwiaWF0IjoxNjkwMzc5MTExLCJleHAiOjE2OTA3MjQ3MTF9.CT3uwxZaMKhCgQMfcVtuNiXc17lG_i-HbthGXWXUGQE",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldpassword\": \"ahmed\",\r\n    \"NewPassword\": \"ahmed\",\r\n    \"cpassword\": \"ahmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/ChangePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"ChangePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDQ3NDIsImV4cCI6MTY5MDY1MDM0Mn0.wYbnCZf-LOiaGRCbP5P0sR3cSRd_3ZvWqEo0mRSc32c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"age\": 10,\r\n    \"firstName\": \"suad\",\r\n    \"lastName\":\"ahmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/Update_User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"Update_User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmQ1MzU4NzZkMGM4YmZiZGEwYTM2ZiIsImVtYWlsIjoibWFsYWtAZ21haWwuY29tIiwiaWF0IjoxNjkwMTQ4ODM0LCJleHAiOjE2OTA0OTQ0MzR9.pMZfAnfL9kSiFjH35SHIgrpUpiMWgVTYJSCWK2cDFuA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/DeleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"DeleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDQ3NDIsImV4cCI6MTY5MDY1MDM0Mn0.wYbnCZf-LOiaGRCbP5P0sR3cSRd_3ZvWqEo0mRSc32c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/soft_delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"soft_delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDQ3NDIsImV4cCI6MTY5MDY1MDM0Mn0.wYbnCZf-LOiaGRCbP5P0sR3cSRd_3ZvWqEo0mRSc32c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/user/Logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"Logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget my password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ma2526057@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/forget_password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"forget_password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "1 - add  task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDQ3NDIsImV4cCI6MTY5MDY1MDM0Mn0.wYbnCZf-LOiaGRCbP5P0sR3cSRd_3ZvWqEo0mRSc32c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"happy or sad\",\r\n    \"description\":\"sad\", \r\n    \"assignTo\":\"64bd535876d0c8bfbda0a36f\",\r\n    \"deadline\": \"27/7/2023\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/addtask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"addtask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 - update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDUzNjIsImV4cCI6MTY5MDY1MDk2Mn0.saLLx1AqimmB0koUlbdN5OeHmh9DOl4R2E00XCzfgtY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"sad or happy hahah\",\r\n    \"description\":\"sigma \", \r\n    \"assignTo\":\"64bd90c7241cbe6a6ecf0f7d\",\r\n    \"deadline\": \"28/7/2023\", \r\n    \"status\":\"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/updatetask?task_id=64c002df20483cda89200e4e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"updatetask"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "64c002df20483cda89200e4e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 - delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmQ1MzU4NzZkMGM4YmZiZGEwYTM2ZiIsImVtYWlsIjoibWFsYWtAZ21haWwuY29tIiwiaWF0IjoxNjkwMjM2ODkyLCJleHAiOjE2OTA1ODI0OTJ9.Y90IL_hL5tGlS2HzYsWlkw4Pcpbe0RHiiOEVEyZjgNk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/deletetask?task_id=64c0027420483cda89200e41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"deletetask"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "64c0027420483cda89200e41"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4-get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/task/getalltaskes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"getalltaskes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5 - tasks of oneUser he login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzAwMGUwMjA0ODNjZGE4OTIwMGUxZiIsImVtYWlsIjoic29zb0BnbWFpbC5jb20iLCJpYXQiOjE2OTAzMDUzNjIsImV4cCI6MTY5MDY1MDk2Mn0.saLLx1AqimmB0koUlbdN5OeHmh9DOl4R2E00XCzfgtY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/tasks_of_oneUser_helogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"tasks_of_oneUser_helogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6-get all tasks of oneUser with user data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/tasks_of_oneUser2/64bd535876d0c8bfbda0a36f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"tasks_of_oneUser2",
+								"64bd535876d0c8bfbda0a36f"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7- get all tasks assign  to do",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmQ5MGM3MjQxY2JlNmE2ZWNmMGY3ZCIsImVtYWlsIjoibW9oYW1lZEBnbWFpbC5jb20iLCJpYXQiOjE2OTAyODk2MjIsImV4cCI6MTY5MDYzNTIyMn0.1usCqsqy8TWd78Lu05IlFBOjOEoO7Pl4YAoS8dk3g60",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/task/task_assing_to_me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"task_assing_to_me"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8-get all tasks that not done after deadline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/task/task_not_done",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"task",
+								"task_not_done"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
